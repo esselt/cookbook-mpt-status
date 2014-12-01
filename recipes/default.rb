@@ -22,11 +22,6 @@ if node[:platform] == 'debian' \
   and node[:platform_version][0] >= '6' \
   and node[:virtualization][:role] == 'guest'
   
-  # Stop service
-  service 'mpt-statusd' do
-    action :stop
-  end
-  
   # Remove package
   package 'mpt-status' do
     action :remove
